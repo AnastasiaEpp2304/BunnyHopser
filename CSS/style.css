@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+body {overflow-y: hidden;
+		overflow-x: hidden;
+			height: 1000px;}
+
+.rabbit { width: 70px;
+    height: 70px;
+    position: absolute;
+    left: 700px;
+    top: 300px;
+    
+}
+
+
+.carrot { height: 7%;
+	width: 30%;
+    position: absolute;
+    left: 400px;
+    top: 400px;
+	width: 60px; }
+	
+.apfel { height: 7%;
+	width: 30%;
+    position: absolute;
+    left: 400px;
+    top: 400px;
+	width: 60px;
+	display: none;}
+	
+.score { position: absolute;
+color: #e495af;
+bottom: 800px; 
+left: 30px;
+font-family: "Fredoka", sans-serif; }
