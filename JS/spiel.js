@@ -30,19 +30,27 @@ function growRabbit() {
 const keys = {};
 
 document.addEventListener("keydown", (e) => {
-    keys[e.key.toLowerCase()] = true;
+    keys[e.code] = true;
 });
 
 document.addEventListener("keyup", (e) => {
-    keys[e.key.toLowerCase()] = false;
+    keys[e.code] = false;
 });
 
 function game() {
 
-    if (keys["d"]) x += 5;
-    if (keys["a"]) x -= 5;
-    if (keys["w"]) y -= 5;
-    if (keys["s"]) y += 5;
+    if (keys["KeyD"]) x += 5;
+	if (keys["KeyA"]) x -= 5;
+	if (keys["KeyW"]) y -= 5;
+	if (keys["KeyS"]) y += 5;
+	
+if (keys["KeyD"]) {
+    rabbit.style.transform = "scaleX(1)";
+}
+
+if (keys["KeyA"]) {
+    rabbit.style.transform = "scaleX(-1)";
+}
 
     if (x < 0) x = 0;
     if (y < 0) y = 0;
