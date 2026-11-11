@@ -9,9 +9,12 @@ body {overflow-y: hidden;
     position: absolute;
     left: 700px;
     top: 300px;
-    
+    transform: scaleX(1);
 }
 
+.hopping {
+    animation: bunnyHop 0.3s ease-in-out infinite;
+}
 
 .carrot { height: 7%;
 	width: 30%;
