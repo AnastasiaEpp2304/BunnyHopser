@@ -12,10 +12,6 @@ body {overflow-y: hidden;
     transform: scaleX(1);
 }
 
-.hopping {
-    animation: bunnyHop 0.3s ease-in-out infinite;
-}
-
 .carrot { height: 7%;
 	width: 30%;
     position: absolute;
