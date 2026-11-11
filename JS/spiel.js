@@ -43,10 +43,6 @@ function game() {
     if (keys["a"]) x -= 5;
     if (keys["w"]) y -= 5;
     if (keys["s"]) y += 5;
-	
-	
-	if (keys["d"]) rabbit.style.transform = "scaleX(1)";
-if (keys["a"]) rabbit.style.transform = "scaleX(-1)";
 
     if (x < 0) x = 0;
     if (y < 0) y = 0;
