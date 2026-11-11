@@ -62,8 +62,6 @@ function game() {
     const carrotRect = carrot.getBoundingClientRect();
     const apfelRect = apfel.getBoundingClientRect();
 
-    // Морковка (+1)
-
     if (
         rabbitRect.left + 30 < carrotRect.right &&
         rabbitRect.right - 30 > carrotRect.left &&
@@ -82,8 +80,6 @@ function game() {
         carrot.style.top =
             Math.random() * (window.innerHeight - carrot.offsetHeight) + "px";
     }
-
-    // Яблоко (+3)
 
     if (
         rabbitRect.left + 30 < apfelRect.right &&
