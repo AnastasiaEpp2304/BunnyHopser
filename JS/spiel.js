@@ -1,6 +1,33 @@
 const rabbit = document.getElementById("rabbit");
+function setSkin(number) {
+    rabbit.src = "img/rabbit" + number + ".png";
+}
 const carrot = document.getElementById("carrot");
 const apfel = document.getElementById("apfel");
+
+const shopBtn = document.getElementById("shopBtn");
+const skinMenu = document.getElementById("skinMenu");
+
+shopBtn.addEventListener("click", () => {
+
+    if (skinMenu.style.display === "block") {
+        skinMenu.style.display = "none";
+    } else {
+        skinMenu.style.display = "block";
+    }
+
+});
+
+function setSkin(number) {
+
+    if (number === 1) {
+        rabbit.src = "img/rabbit.png";
+    } else {
+        rabbit.src = "img/rabbit" + number + ".png";
+    }
+
+}
+
 
 setTimeout(() => {
     apfel.style.display = "block";
