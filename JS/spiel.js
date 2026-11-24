@@ -20,6 +20,31 @@ shopBtn.addEventListener("click", () => {
 
 function setSkin(number) {
 
+    if (number === 2 && score < 10) {
+        alert("Нужно 10 очков!");
+        return;
+    }
+
+    if (number === 3 && score < 20) {
+        alert("Нужно 20 очков!");
+        return;
+    }
+
+    if (number === 4 && score < 30) {
+        alert("Нужно 30 очков!");
+        return;
+    }
+
+    if (number === 5 && score < 40) {
+        alert("Нужно 40 очков!");
+        return;
+    }
+
+    if (number === 6 && score < 50) {
+        alert("Нужно 50 очков!");
+        return;
+    }
+
     if (number === 1) {
         rabbit.src = "img/rabbit.png";
     } else {
