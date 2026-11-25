@@ -4,6 +4,19 @@ function setSkin(number) {
 }
 const carrot = document.getElementById("carrot");
 const apfel = document.getElementById("apfel");
+const strawberry = document.getElementById("strawberry")
+strawberry.style.display = "none";;
+setTimeout(() => {
+
+    strawberry.style.display = "block";
+
+    strawberry.style.left =
+        Math.random() * (window.innerWidth - 50) + "px";
+
+    strawberry.style.top =
+        Math.random() * (window.innerHeight - 50) + "px";
+
+}, 10000);
 
 const shopBtn = document.getElementById("shopBtn");
 const skinMenu = document.getElementById("skinMenu");
@@ -195,8 +208,36 @@ setTimeout(() => {
         Math.random() * (window.innerHeight - apfel.offsetHeight) + "px";
 }, 5000);
     }
+	
+	const strawberryRect = strawberry.getBoundingClientRect();
+
+if (
+    strawberry.style.display === "block" &&
+    rabbitRect.left + 30 < strawberryRect.right &&
+    rabbitRect.right - 30 > strawberryRect.left &&
+    rabbitRect.top + 30 < strawberryRect.bottom &&
+    rabbitRect.bottom - 30 > strawberryRect.top
+) {
+
+    score += 10;
+
+    scoreText.textContent = "Punkte: " + score;
+
+    strawberry.style.display = "none";
+
+    setTimeout(() => {
+        strawberry.style.display = "block";
+
+        strawberry.style.left =
+            Math.random() * (window.innerWidth - strawberry.offsetWidth) + "px";
+
+        strawberry.style.top =
+            Math.random() * (window.innerHeight - strawberry.offsetHeight) + "px";
+    }, 30000);
+}
 
     requestAnimationFrame(game);
+	
 }
 
 game();

@@ -28,6 +28,14 @@ body {overflow-y: hidden;
 	width: 60px;
 	display: none;}
 	
+.erdbeer { height: 5%;
+	width: 29%;
+    position: absolute;
+    left: 400px;
+    top: 400px;
+	width: 60px;
+	display: none;}
+	
 .score { position: absolute;
 color: #e495af;
 bottom: 800px; 
