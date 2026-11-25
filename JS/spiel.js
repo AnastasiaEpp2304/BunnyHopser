@@ -18,7 +18,18 @@ shopBtn.addEventListener("click", () => {
 
 });
 
+let boughtSkins = [1];
+
 function setSkin(number) {
+
+    if (boughtSkins.includes(number)) {
+        if (number === 1) {
+            rabbit.src = "img/rabbit.png";
+        } else {
+            rabbit.src = "img/rabbit" + number + ".png";
+        }
+        return;
+    }
 
     if (number === 2 && score < 10) {
         alert("Нужно 10 очков!");
@@ -45,12 +56,21 @@ function setSkin(number) {
         return;
     }
 
+    if (number === 2) score -= 10;
+    if (number === 3) score -= 20;
+    if (number === 4) score -= 30;
+    if (number === 5) score -= 40;
+    if (number === 6) score -= 50;
+
+    boughtSkins.push(number);
+
+    scoreText.textContent = "Punkte: " + score;
+
     if (number === 1) {
         rabbit.src = "img/rabbit.png";
     } else {
         rabbit.src = "img/rabbit" + number + ".png";
     }
-
 }
 
 
@@ -74,10 +94,15 @@ let y = 300;
 let rabbitSize = 80;
 
 function growRabbit() {
-    rabbitSize += 5;
+    rabbitSize = Math.min(rabbitSize + 5, 400);
+
     rabbit.style.width = rabbitSize + "px";
     rabbit.style.height = rabbitSize + "px";
 }
+
+rabbit.style.width = rabbitSize + "px";
+rabbit.style.height = rabbitSize + "px";
+
 
 const keys = {};
 
@@ -106,6 +131,12 @@ if (keys["KeyA"]) {
 
     if (x < 0) x = 0;
     if (y < 0) y = 0;
+	
+	if (x > window.innerWidth - rabbitSize)
+    x = window.innerWidth - rabbitSize;
+
+	if (y > window.innerHeight - rabbitSize)
+    y = window.innerHeight - rabbitSize;
 
     if (x > 1900 - rabbit.offsetWidth) {
         x = 1900 - rabbit.offsetWidth;
